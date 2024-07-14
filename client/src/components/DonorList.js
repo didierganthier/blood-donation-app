@@ -25,4 +25,3 @@ const DonorList = () => {
 };
 
 export default DonorList;
-

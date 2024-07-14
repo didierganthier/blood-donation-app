@@ -1,25 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import DonorList from './components/DonorList';
 import DonorForm from './components/DonorForm';
+import BloodRequestList from './components/BloodRequestList';
+import BloodRequestForm from './components/BloodRequestForm';
+
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <div>
-        <h1>Blood Donation App</h1>
-        <Switch>
-          <Route path="/add-donor">
-            <DonorForm />
-          </Route>
-          <Route path="/">
-            <DonorList />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div>
+      <Routes>
+        <Route path="/" element={<DonorList />} />
+        <Route path="/add-donor" index element={<DonorForm />} />
+        <Route path="/blood-requests" index element={<BloodRequestList />} />
+        <Route path="/add-blood-request" index element={<BloodRequestForm />} />
+      </Routes>
+    </div>
   );
 }
 
 export default App;
-
